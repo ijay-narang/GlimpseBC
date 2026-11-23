@@ -1,0 +1,9 @@
+# @package network
+# Metadata for the separate GLiTR agent; the shared policy factory is not used.
+defaults:
+  - _base
+  - _self_
+
+network_type: glitr
+encoder_type: glitr
+emb_dim: 768  # Original ViT-S temporal width; not a tunable policy embedding.

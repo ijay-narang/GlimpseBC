@@ -1,0 +1,25 @@
+# @package task
+defaults:
+  - libero_base
+  - _self_
+
+env_type: "libero_spatial"
+libero_suite: "libero_spatial"
+libero_task_id: 0
+
+shape_meta:
+  action:
+    shape: [7]
+  obs:
+    agentview_rgb:
+      shape: [3, 128, 128]
+      type: rgb
+    eye_in_hand_rgb:
+      shape: [3, 128, 128]
+      type: rgb
+    gripper_states:
+      shape: [2]
+      type: low_dim
+    joint_states:
+      shape: [7]
+      type: low_dim

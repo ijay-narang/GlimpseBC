@@ -1,0 +1,4 @@
+defaults:
+  - glitr
+  - override task: lift_ph_image
+  - _self_

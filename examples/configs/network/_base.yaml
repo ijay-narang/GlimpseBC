@@ -1,0 +1,28 @@
+# @package network
+# Base configuration for all networks - shared encoder parameters
+defaults:
+  - _self_
+
+# Shared encoder parameters (used across all networks)
+num_encoder_layers: 2  # Number of layers for MLP encoder
+encoder_dropout: 0.0   # Dropout for encoder
+encoder_type: "mlp"    # "mlp", "per_step_mlp", "identity"
+emb_dim: -1
+
+# Image encoder configs (used when obs_type is "image")
+rgb_model_name: "resnet18"
+use_seq: true
+keep_horizon_dims: true
+annealed_vanilla_patch_size: null
+annealed_vanilla_start_scale: 0.8
+annealed_vanilla_anneal_steps: 100000
+
+# Local Gaussian-foveated saccades. Radii use prepared source-image pixels;
+# blur sigma uses output pixels. Null radius defaults to half the patch size,
+# and null start radius defaults to twice the final radius (must fit the image).
+foveated_patch_size: null
+foveated_radius: null
+foveated_start_radius: null
+foveated_fovea_ratio: 0.4
+foveated_blur_sigma: 2.0
+foveated_anneal_steps: 100000

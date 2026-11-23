@@ -1,0 +1,43 @@
+# Isolated LIBERO runtime. Keep this separate from the repository's Robosuite 1.5 stack.
+numpy<2
+torch>=2.2
+torchvision
+tensordict>=0.5.0
+hydra-core
+hydra-submitit-launcher
+loguru
+wandb
+av
+dill
+gymnasium
+gym==0.25.2
+h5py
+huggingface-hub
+numba
+scipy
+scikit-image
+opencv-python-headless
+imageio
+imageio-ffmpeg
+moviepy
+mediapy
+timm>=1.0.0
+einops>=0.8.1
+# The isolated LIBERO environment uses Python 3.10. Newer Zarr/Numcodecs
+# releases require Python 3.11+, while these versions retain the v2 APIs used
+# by mip.dataset_utils (MemoryStore, DirectoryStore, and copy_store).
+zarr==2.17.2
+numcodecs==0.13.1
+imagecodecs
+tqdm
+six
+termcolor
+matplotlib
+bddl==1.0.1
+easydict
+cloudpickle
+future
+mujoco==2.3.7
+robosuite==1.4.1
+# setup_libero_env.sh registers a pinned LIBERO source checkout after installing
+# these dependencies; modern wheels omit LIBERO's outer namespace package.

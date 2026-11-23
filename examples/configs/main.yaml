@@ -1,0 +1,19 @@
+defaults:
+  - log: default
+  - optimization: default
+  - network: rnn
+  - task: lift_ph_image
+  - launcher: basic
+  - _self_
+
+mode: "train"
+
+# Auto-generated experiment name
+log:
+  exp_name: "${task.env_name}_${task.env_type}_${task.obs_type}_${optimization.loss_type}_${network.network_type}_${network.emb_dim}_seed${optimization.seed}"
+
+# Default direct invocation is an image-based RNN regression baseline.
+network:
+  encoder_type: image
+optimization:
+  loss_type: regression

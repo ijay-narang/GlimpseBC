@@ -1,0 +1,48 @@
+# @package task
+# Shared configuration for isolated, single-task LIBERO experiments.
+defaults:
+  - _self_
+
+env_name: "libero"
+env_type: "libero_spatial"
+obs_type: "image"
+
+libero_suite: "libero_spatial"
+libero_task_id: 0
+libero_task_order_index: 0
+libero_settle_steps: 5
+libero_hard_reset: true
+# An explicit HDF5 file takes precedence. Otherwise dataset_root (or the
+# LIBERO_DATA_ROOT environment variable) is combined with official task metadata.
+dataset_path: null
+dataset_root: null
+dataset_repo: null
+dataset_filename: null
+dataset_filter_key: null
+
+abs_action: false
+action_type: "delta"
+act_dim: 7
+obs_dim: 256
+obs_steps: 2
+act_steps: 8
+horizon: 10
+max_episode_steps: 300
+num_envs: 1
+num_workers: 4
+save_video: false
+val_dataset_percentage: 0.0
+
+image_shape: [128, 128]
+resize_shape: null
+crop_shape: null
+random_crop: false
+use_group_norm: true
+use_seq: true
+render_obs_key: "agentview_rgb"
+
+libero_obs_key_mapping:
+  agentview_rgb: agentview_image
+  eye_in_hand_rgb: robot0_eye_in_hand_image
+  gripper_states: robot0_gripper_qpos
+  joint_states: robot0_joint_pos
